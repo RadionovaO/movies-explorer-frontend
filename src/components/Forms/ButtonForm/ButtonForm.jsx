@@ -9,7 +9,7 @@ function ButtonForm() {
             <button className="button-form__submit" type="submit">{location.pathname === '/signup' ? 'Зарегистрироваться' : 'Войти'}</button>
             <div className="button-form__link-container">
                 <span className="button-form__span">
-                    {location.pathname === '/signup' ? 'Уже зарегитрированы?' : 'Ещё не зарегистрированы?' }
+                    {location.pathname === '/signup' ? 'Уже зарегистрированы?' : 'Ещё не зарегистрированы?' }
                 </span>
                 <Link className="button-form__link" to={location.pathname === '/signup' ? '/signin' : '/signup'}>
                 {location.pathname === '/signup' ? 'Войти' : 'Регистрация'}

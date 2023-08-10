@@ -23,7 +23,7 @@
     background: url(../../images/burger.svg);
   }
 
-  .hamburger-menu__btn {
+  .hamburger-menu__btn:hover {
     opacity: 0.8;
   }
 

@@ -30,6 +30,12 @@
     }
 }
 
+@media screen and (max-width: 766px) {
+    .header-form {
+        margin: 0;
+    }
+}
+
 @media screen and (max-width: 400px) {
     .header-form {
         margin: 0 auto 0;

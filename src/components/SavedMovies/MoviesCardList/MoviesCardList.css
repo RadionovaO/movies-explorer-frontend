@@ -60,6 +60,17 @@
     }
 }
 
+@media screen and (max-width: 766px) {
+    .movies {
+        padding: 40px 20px 120px;
+    }
+
+    .movies__list {
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+        gap: 20px;
+    }
+}
+
 @media screen and (max-width: 400px) {
     .movies {
         padding: 40px 10px 160px; 
@@ -67,7 +78,6 @@
 
     .movies__list {
         max-width: 300px;
-        grid-template-columns: repeat(1, minmax(300px, 1fr));
         gap: 16px;
     }
 }

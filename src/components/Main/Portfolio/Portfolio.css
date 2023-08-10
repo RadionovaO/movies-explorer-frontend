@@ -73,17 +73,34 @@
 
 @media screen and (max-width: 400px) {
     .portfolio {
-        padding: 0 14px 0;
+        padding: 20px 14px 78px;
+    }
+
+    .portfolio__title {
+        font-size: 14px;
+        line-height: 20px;
     }
 
     .portfolio__element {
-        padding: 40px 0 19px;
+        padding: 38px 0 0;
         font-size: 18px;
         line-height: 28px;
+        letter-spacing: -0.72px;
+    }
+
+    .portfolio__element:first-child {
+        padding: 10px 0 0;
     }
 
     .portfolio__element:last-child {
-        padding: 20px 0 70px;
+        padding: 39px 0 70px;
         border-bottom: none;
+    }
+
+    .portfolio__button {
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.72px;
+        padding: 0;
     }
 }

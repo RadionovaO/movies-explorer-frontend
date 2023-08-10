@@ -37,5 +37,7 @@
    .nav-tab__link {
     min-width: 82px;
     font-size: 10px;
+    margin-top: 20px;
+    min-height: 26px;
    }
 }

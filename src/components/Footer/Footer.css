@@ -42,6 +42,10 @@
     color: #000000;
 }
 
+.footer__link:hover {
+    opacity: 0.8;
+}
+
 @media screen and (max-width: 790px) {
     .footer {
         padding: 0 30px 0;
@@ -66,7 +70,17 @@
 
     .footer__list {
         flex-direction: column;
-        gap: 12px;
+        gap: 11px;
         align-items: center;
+    }
+
+    .footer__title {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .footer__copyright {
+        font-size: 12px;
+        line-height: 15px;
     }
 }

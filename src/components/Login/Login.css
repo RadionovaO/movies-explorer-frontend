@@ -4,6 +4,7 @@
     margin: 0 auto;
     max-width: 396px;
     align-items: center;
+    padding-bottom: 70px;
 }
 
 .login__form {
@@ -30,6 +31,11 @@
     padding: 15px 0 15px 15px;
 }
 
+.login__input::placeholder {
+    font-size: 13px;
+    line-height: 16px;
+}
+
 .login__input_type_error {
     border-bottom: 2px solid #FF4062;
 }
@@ -45,11 +51,17 @@
 
 @media screen and (max-width: 790px) {
     .login__form {
-        padding: 40px 0 160px;
+        padding: 40px 0 70px;
     }
 
     .login__input-error {
         padding-top: 5px;
+    }
+}
+
+@media screen and (max-width: 766px) {
+    .login {
+        padding: 0 15px 10px;
     }
 }
 
