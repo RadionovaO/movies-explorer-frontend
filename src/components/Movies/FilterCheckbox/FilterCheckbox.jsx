@@ -5,7 +5,10 @@ function FilterCheckbox() {
 
     return (
         <div className="checkbox">
-            <input className="checkbox__input" type="checkbox"></input>
+            <input
+                className="checkbox__input"
+                type="checkbox"
+            ></input>
             <p className="checkbox__title">Короткометражки</p>
         </div>
     );

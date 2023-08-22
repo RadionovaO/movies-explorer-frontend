@@ -1,12 +1,21 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import './ButtonForm.css';
+// import { useFormAndValidation } from "../../../hooks/useFormAndValidation";
 
-function ButtonForm() {
+function ButtonForm({isValid}) {
     const location = useLocation();
+
+    // const { values, handleChange, errors, isValid, setValues } = useFormAndValidation()
+
     return (
         <div className="button-form">
-            <button className="button-form__submit" type="submit">{location.pathname === '/signup' ? 'Зарегистрироваться' : 'Войти'}</button>
+            <button
+                className="button-form__submit"
+                type="submit"
+                disabled={!isValid}>
+                {location.pathname === '/signup' ? 'Зарегистрироваться' : 'Войти'}
+            </button>
             <div className="button-form__link-container">
                 <span className="button-form__span">
                     {location.pathname === '/signup' ? 'Уже зарегистрированы?' : 'Ещё не зарегистрированы?' }

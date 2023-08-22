@@ -4,14 +4,27 @@ import HeaderForm from "../Forms/HeaderForm/HeaderForm";
 import ButtonForm from "../Forms/ButtonForm/ButtonForm";
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 
-function Register() {
+function Register({onRegister}) {
 
-    const {values, handleChange, errors, isValid, setValues} = useFormAndValidation()
+    const { values, handleChange, errors, isValid, setValues } = useFormAndValidation();
+    
+    function handleSubmit(evt) {
+        evt.preventDefault();
+        /*if (isValid) {
+            console.log(isValid);
+            onRegister(values.name, values.password, values.email);
+        };*/
+        onRegister({
+            name: values.name,
+            password: values.password,
+            email: values.email,
+        });
+    };
 
     return (
         <div className="register">
             <HeaderForm />
-            <form className="register__form">
+            <form className="register__form" onSubmit={handleSubmit}>
                 <label className="register__label">Имя</label>
                 <input
                     className={`register__input ${!isValid && 'register__input_type_error'}`}
@@ -53,7 +66,7 @@ function Register() {
                 <span className="register__input-error">{ errors.password ?? '' }</span>
 
             </form>
-            <ButtonForm />
+            <ButtonForm isValid={isValid}/>
         </div>
     );
 };
