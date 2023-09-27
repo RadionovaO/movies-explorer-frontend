@@ -3,13 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import './ButtonForm.css';
 // import { useFormAndValidation } from "../../../hooks/useFormAndValidation";
 
-function ButtonForm({isValid}) {
+function ButtonForm({isValid, handleSubmit}) {
     const location = useLocation();
 
     // const { values, handleChange, errors, isValid, setValues } = useFormAndValidation()
 
     return (
-        <div className="button-form">
+        <div className="button-form" >
             <button
                 className="button-form__submit"
                 type="submit"

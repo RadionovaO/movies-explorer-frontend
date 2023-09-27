@@ -64,9 +64,9 @@ function Register({onRegister}) {
                     onChange={handleChange}
                 />
                 <span className="register__input-error">{ errors.password ?? '' }</span>
-
-            </form>
             <ButtonForm isValid={isValid}/>
+            </form>
+            
         </div>
     );
 };

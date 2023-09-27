@@ -13,7 +13,7 @@ export const getMovies = () => {
         headers: {
             'Content-Type': 'application/json',
         },
-        credentials: 'include',
+       // credentials: 'include',
     })
         .then((res) => checkResponse(res));
 };  

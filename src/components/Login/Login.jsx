@@ -50,9 +50,9 @@ function Login({onLoginSubmit}) {
                     onChange={handleChange}
                 />
                 <span className="login__input-error">{ errors.password ?? '' }</span>
-                
+            <ButtonForm isValid={isValid}/>    
             </form>
-            <ButtonForm isValid={isValid}/>
+            
         </div>
     );
 };

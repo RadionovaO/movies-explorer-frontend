@@ -1,3 +1,4 @@
+import { imageURL } from "./consts";
 //export const BASE_URL = 'https://api.diploma.project.nomoredomains.xyz';
 export const BASE_URL = 'http://localhost:3000';
 
@@ -17,9 +18,9 @@ export const register = ({name, password, email}) => {
         },
         credentials: 'include',
         body: JSON.stringify({
-            name: name,
-            password: password,
-            email: email,
+            name,
+            password,
+            email,
         })
     })
         .then((res) => checkResponse(res));
@@ -31,7 +32,7 @@ export const login = ({email, password}) => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email: email, password: password }),
+        body: JSON.stringify({ email, password }),
         credentials: 'include',
     })
         .then((res) => checkResponse(res))
@@ -56,8 +57,19 @@ export const login = ({email, password}) => {
     
 };
 
+export const signOut = () => {
+    return fetch(`${BASE_URL}/signout`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+    })
+        .then((res) => checkResponse(res));
+};
+
 //получаем данные пользователя
-export const getUserInfo = () => {
+export const getUserInfo = (user) => {
     return fetch(`${BASE_URL}/users/me`, {
         method: 'GET',
         headers: {
@@ -69,7 +81,7 @@ export const getUserInfo = () => {
 };  
 
 //редактирование профиля
-export const updateUser = (data) => {
+export const updateUser = (user) => {
     return fetch(`${BASE_URL}/users/me`, {
         method: 'PATCH',
         headers: {
@@ -77,12 +89,23 @@ export const updateUser = (data) => {
         },
         credentials: 'include',
         body: JSON.stringify({
-            name: data.name,
-            email: data.email,
+            name: user.name,
+            email: user.email,
         }),
     })
        .then((res) => checkResponse(res));
 };
+
+export const getMovies = () => {
+    return fetch(`${BASE_URL}/movies`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        credentials: 'include',
+    })
+       .then((res) => checkResponse(res));
+}; 
 
 export const getSavedMovies = () => {
     return fetch(`${BASE_URL}/movies`, {
@@ -108,10 +131,10 @@ export const postMovie = (movie) => {
             duration: movie.duration,
             year: movie.year,
             description: movie.description,
-            image: movie.image,
-            trailerLink: movie.trailerLink,
-            thumbnail: movie.thumbnail,
-            movieId: movie.movieId,
+            image: `${imageURL}&{data.image.url}`,
+            trailerLink: movie.trailerLink.URL,
+            thumbnail: `${imageURL}&{data.image.formats.thumbnail.url}`,
+            movieId: movie.id,
             nameRU: movie.nameRU,
             nameEN: movie.nameEN,
         }),
